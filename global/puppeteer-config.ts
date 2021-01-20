@@ -1,11 +1,11 @@
 import * as puppeteer from 'puppeteer'
 
-export let browser = null
-export let page = null
+export let browser: puppeteer.Browser | null = null
+export let page: puppeteer.Page | null = null
 
-const browserSize = [1920, 1080]
+const browserSize: Array<number> = [1920, 1080]
 
-export const init = async () => {
+export const init = async (): Promise<void> => {
   browser = await puppeteer.launch(
     {
       headless: false,

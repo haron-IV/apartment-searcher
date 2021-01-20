@@ -1,9 +1,9 @@
-import { init, page, browser } from './global/puppeter-config';
+import { init, browser } from './global/puppeteer-config';
+import olx from './services/olx/index'
 
 (async () => {
   await init()
-  await page.goto('https://example.com');
-  await page.screenshot({path: 'example.png'});
+  await olx()
 
   await browser.close();
 })();

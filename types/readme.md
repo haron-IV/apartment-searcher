@@ -1,0 +1,1 @@
+Here you have to put your typescript things like interfaces, types etc.
