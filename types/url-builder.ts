@@ -4,6 +4,7 @@ export interface OlxSearcherUrl {
   priceTo: number,
   fromSquareMeters: number,
   toSquareMeters: number,
-  rooms: Array<number>
+  rooms: Array<number>,
+  city: string
   ): string
 }

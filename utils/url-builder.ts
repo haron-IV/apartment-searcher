@@ -33,11 +33,11 @@ const createRoomsUrlParameter = (rooms: Array<number>): string => {
   return urlParameter
 } 
 
-export const olxSearcherUrl: OlxSearcherUrl = (priceFrom, priceTo, fromSquareMeters, toSquareMeters, rooms) => {
+export const olxSearcherUrl: OlxSearcherUrl = (priceFrom, priceTo, fromSquareMeters, toSquareMeters, rooms, city) => {
   const priceFromString: string = `${bracketLeft}filter_float_price%3Afrom${bracketRight}=${priceFrom}`
   const priceToString: string = `&search${bracketLeft}filter_float_price%3Ato${bracketRight}=${priceTo}`
   const fromSquareMetersString: string = `&search${bracketLeft}filter_float_m%3Afrom${bracketRight}=${fromSquareMeters}`
   const toSquareMetersString: string = `&search${bracketLeft}filter_float_m%3Ato${bracketRight}=${toSquareMeters}`
 
-  return `${urls.olx.realEstatesSale}/?search${priceFromString}${priceToString}${fromSquareMetersString}${toSquareMetersString}${createRoomsUrlParameter(rooms)}`
+  return `${urls.olx.realEstatesSale}/${city}/?search${priceFromString}${priceToString}${fromSquareMetersString}${toSquareMetersString}${createRoomsUrlParameter(rooms)}`
 }
